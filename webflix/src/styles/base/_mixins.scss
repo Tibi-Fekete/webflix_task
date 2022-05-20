@@ -1,0 +1,15 @@
+@import "src/styles/base/colors";
+@import "src/styles/base/fonts";
+
+@mixin setFontWeightAndSize($fontSize, $fontWeight) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  margin-bottom: 0;
+  padding: 0.3rem;
+}
+
+
+@mixin setBaseTitleStyle($color: $lightgray) {
+  color: $color;
+  font-family: $openSans;
+}

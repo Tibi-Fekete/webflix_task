@@ -15,4 +15,5 @@ export class ResultListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

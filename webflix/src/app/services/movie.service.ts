@@ -15,6 +15,8 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   public getMovies(query: string, page: number): Observable<MovieListResult> {
+    console.log('service: ', query, page);
+
     return this.http.get<MovieListResult>(this.BASE_URL + 'search/movie',
       {params: {
         api_key: environment.api_key,

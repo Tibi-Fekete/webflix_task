@@ -1,0 +1,61 @@
+@import "src/styles/main";
+
+.page-wrapper {
+  background: #282727;
+  width: 100%;
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    h2 {
+      @include setFontWeightAndSize(2rem, bold);
+      @include setBaseTitleStyle;
+      text-align: center;
+    }
+
+
+    ::ng-deep .p-paginator {
+      background: rgba(9, 34, 52, 0.93);
+
+      .p-paginator-pages {
+        display: none;
+      }
+
+      .p-ripple {
+        color: $white;
+
+        &:hover {
+          background: $transparent-blue;
+        }
+      }
+
+      .p-highlight {
+        background:  $transparent-blue;
+      }
+    }
+
+
+}
+
+
+  @media only screen and(min-width: 576px){
+    .content-wrapper {
+
+      h2 {
+        text-align: left;
+        margin-left: 1rem;
+      }
+
+      ::ng-deep .p-paginator {
+
+        .p-paginator-pages {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+}
