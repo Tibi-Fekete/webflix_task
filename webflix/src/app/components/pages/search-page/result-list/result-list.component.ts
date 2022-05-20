@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Movie} from "../../../../models/movie.model";
 
 @Component({
@@ -8,12 +8,16 @@ import {Movie} from "../../../../models/movie.model";
 })
 export class ResultListComponent implements OnInit {
 
-  @Input() movieList:Movie[] = [];
+  @Input() public movieList:Movie[] = [];
+  @Output() public movieIdEmitter: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public openDetailsModal(movieId: number): void {
+    this.movieIdEmitter.emit(movieId);
+  }
 
 }

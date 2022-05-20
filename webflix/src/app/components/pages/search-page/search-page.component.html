@@ -4,7 +4,16 @@
       <p>search panel to be</p>
     </div>
     <h2>{{movieResults?.total_results}} Search result(s)</h2>
-    <app-result-list [movieList]="movieResults ? movieResults.results : []"></app-result-list>
+    <app-result-list
+      [movieList]="movieResults ? movieResults.results : []"
+      (movieIdEmitter)="getMovieDetailsAndOpenModal($event)"
+    ></app-result-list>
+
+    <app-details-modal
+      [display]="detailsModalVisible"
+      [movie]="detailedMovie"
+      (closeModalEmitter)="closeMovieDetailsModal()"
+    ></app-details-modal>
 
     <div class="paginator-holder">
       <p-paginator [rows]="20" [totalRecords]="movieResults ? movieResults.total_results : 0" (onPageChange)="paginate($event)"></p-paginator>

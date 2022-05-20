@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {MovieListResult} from "../models/movie-list-result.model";
 import {GenresResult} from "../models/genre.model";
+import {MovieDetails} from "../models/movie-details.model";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,6 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   public getMovies(query: string, page: number): Observable<MovieListResult> {
-    console.log('service: ', query, page);
-
     return this.http.get<MovieListResult>(this.BASE_URL + 'search/movie',
       {params: {
         api_key: environment.api_key,
@@ -34,8 +33,8 @@ export class MovieService {
         }})
   }
 
-  public getMovieDetails(id: number): Observable<any> {
-    return this.http.get<any>(this.BASE_URL + `movie/${id}`,
+  public getMovieDetails(id: number): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(this.BASE_URL + `movie/${id}`,
       {params: {
           api_key: environment.api_key,
           language: 'en-US',

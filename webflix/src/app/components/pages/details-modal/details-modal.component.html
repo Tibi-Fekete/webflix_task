@@ -1,1 +1,45 @@
-<p>details-modal works!</p>
+<p-dialog
+  [(visible)]="display"
+  [style]="{width: '65vw'}"
+  [breakpoints]="{'960px': '65vw','776px':'80vw', '640px': '98vw'}"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="closeModal()"
+>
+  <div class="wrapper">
+    <div class="image-holder">
+      <img [src]="movie?.poster_path
+          ? 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/'+ movie!.poster_path
+          : 'assets/img-placeholder.png'"
+           alt="film poster"
+      >
+    </div>
+
+    <div class="text-holder">
+      <h1>{{movie?.title}}</h1>
+      <h2>{{movie?.tagline}}</h2>
+      <p>Released: {{movie?.release_date | date}}</p>
+      <p>{{movie?.overview}}</p>
+      <table>
+          <tr>
+            <td>Country</td>
+            <td>???</td>
+          </tr>
+          <tr>
+            <td>Language</td>
+            <td>{{movie?.original_language}}</td>
+          </tr>
+          <tr>
+            <td>Genres</td>
+            <td><span *ngFor="let genre of movie?.genres">{{genre.name}}, </span></td>
+          </tr>
+          <tr>
+            <td>Length</td>
+            <td>{{movie?.runtime}} mins</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+  <ng-template pTemplate="footer"></ng-template>
+</p-dialog>

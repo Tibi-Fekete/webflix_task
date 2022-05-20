@@ -9,7 +9,10 @@ import { ResultListComponent } from './components/pages/search-page/result-list/
 
 import {CardModule} from 'primeng/card';
 import {PaginatorModule} from 'primeng/paginator';
+import {DialogModule} from 'primeng/dialog';
+import {TableModule} from 'primeng/table';
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -20,10 +23,13 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     CardModule,
-    PaginatorModule
+    PaginatorModule,
+    DialogModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

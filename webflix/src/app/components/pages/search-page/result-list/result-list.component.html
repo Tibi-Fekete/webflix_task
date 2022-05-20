@@ -2,13 +2,18 @@
   <div class="card-holder" *ngFor="let movie of movieList">
     <p-card>
       <div class="img-holder">
-      <img [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2/'+ movie.poster_path" alt="film poster">
+        <img [src]="movie.poster_path
+          ? 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/'+ movie.poster_path
+          : 'assets/img-placeholder.png'"
+             alt="film poster"
+          (click)="openDetailsModal(movie.id)"
+        >
       </div>
       <ng-template pTemplate="footer">
         <h2 class="title">{{movie.title}}</h2>
         <h3>{{movie.release_date | date:'YYYY'}}</h3>
         <h3>
-          <span *ngFor="let genre of movie.genres; let i = index" >{{i < 2 ? genre +', ' : ""}}</span>
+          <span *ngFor="let genre of movie.genres; let i = index">{{i < 2 ? genre + ', ' : ""}}</span>
         </h3>
       </ng-template>
     </p-card>

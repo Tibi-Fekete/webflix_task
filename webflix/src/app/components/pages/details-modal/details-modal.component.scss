@@ -1,0 +1,87 @@
+@import "src/styles/main";
+
+:host ::ng-deep .p-dialog-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+:host ::ng-deep .p-dialog-content::-webkit-scrollbar-track {
+  background: #bbb2b2;
+}
+
+/* Handle */
+:host ::ng-deep .p-dialog-content::-webkit-scrollbar-thumb {
+  background: #6e6d6d;
+}
+
+/* Handle on hover */
+:host ::ng-deep .p-dialog-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+:host ::ng-deep .p-dialog-header {
+  background: $lighgray-bg;
+}
+
+:host ::ng-deep .p-dialog-content {
+  background: $lighgray-bg;
+}
+
+:host ::ng-deep .p-dialog-footer {
+  background: $lighgray-bg;
+}
+
+.wrapper {
+  width: 100%;
+
+  .image-holder {
+    width: 60%;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+
+
+  .text-holder {
+    width: 90%;
+    margin: 0 auto;
+    h1 {
+      @include setFontWeightAndSize(1.5rem, bold)
+    }
+
+    h2 {
+      @include setFontWeightAndSize(1.3rem, bold)
+    }
+
+    p {
+      @include setFontWeightAndSize(1rem, solid)
+
+    }
+
+    table td {
+      padding: 0.5rem;
+    }
+    @include setBaseTitleStyle()
+  }
+
+  @media only screen and(min-width: 776px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .image-holder {
+      width: 48%;
+    }
+
+    .text-holder {
+      width: 48%;
+    }
+  }
+}
+
