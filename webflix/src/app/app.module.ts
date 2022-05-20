@@ -8,12 +8,14 @@ import { DetailsModalComponent } from './components/pages/details-modal/details-
 
 import {CardModule} from 'primeng/card';
 import {HttpClientModule} from "@angular/common/http";
+import { ResultListComponent } from './components/pages/search-page/result-list/result-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchPageComponent,
-    DetailsModalComponent
+    DetailsModalComponent,
+    ResultListComponent
   ],
   imports: [
     BrowserModule,

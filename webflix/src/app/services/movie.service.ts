@@ -3,7 +3,7 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {MovieListResult} from "../models/movie-list-result.model";
-import {Genre} from "../models/genre.model";
+import {GenresResult} from "../models/genre.model";
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +24,8 @@ export class MovieService {
         }})
   }
 
-  public getGenres(): Observable<Genre[]> {
-    return this.http.get<Genre[]>(this.BASE_URL + 'genre/movie/list',
+  public getGenres(): Observable<GenresResult> {
+    return this.http.get<GenresResult>(this.BASE_URL + 'genre/movie/list',
       {params: {
           api_key: environment.api_key,
           language: 'en-US',
