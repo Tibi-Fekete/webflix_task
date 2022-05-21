@@ -15,6 +15,7 @@ import {TableModule} from 'primeng/table';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { SearchPanelComponent } from './components/pages/search-page/search-panel/search-panel.component';
+import { NoResultsComponent } from './components/pages/search-page/no-results/no-results.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchPanelComponent } from './components/pages/search-page/search-pane
     SearchPageComponent,
     DetailsModalComponent,
     ResultListComponent,
-    SearchPanelComponent
+    SearchPanelComponent,
+    NoResultsComponent
   ],
   imports: [
     BrowserModule,

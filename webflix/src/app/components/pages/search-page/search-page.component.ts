@@ -11,6 +11,8 @@ import {MovieDetails} from "../../../models/movie-details.model";
 })
 export class SearchPageComponent implements OnInit {
 
+  public pageInitState: boolean = true;
+
   public query: string = "";
   public page: number = 1;
 
@@ -25,21 +27,15 @@ export class SearchPageComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.movieService.getGenres().subscribe({
-      next: (genresResult) => {
-        this.genres = genresResult.genres
-      },
-      error: () => {
-      },
-      complete: () => {
-        // this.getMovieListAndMapGenres(this.query, 1);
-      },
-    })
+    this.movieService.getGenres().subscribe(
+      (genresResult) => this.genres = genresResult.genres
+    )
   }
 
 
   public getMoviesByGivenQuery(event: any): void {
     this.query = event;
+    this.pageInitState = false;
     this.getMovieListAndMapGenres(this.query, this.page);
   }
 
