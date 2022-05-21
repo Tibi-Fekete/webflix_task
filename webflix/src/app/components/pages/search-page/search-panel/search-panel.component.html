@@ -1,0 +1,7 @@
+<div>
+  <h1>Search:</h1>
+  <span class="p-input-icon-right">
+      <i class="pi pi-times-circle" (click)="clearInput()"></i>
+      <input (keyup)="checkAndEmitInputValue()" type="text" pInputText [(ngModel)]="inputValue" placeholder="Search">
+  </span>
+</div>

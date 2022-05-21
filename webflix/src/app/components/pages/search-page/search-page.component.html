@@ -1,9 +1,9 @@
 <section class="page-wrapper">
   <div class="content-wrapper">
     <div class="search-panel">
-      <p>search panel to be</p>
+      <app-search-panel (inputEmitter)="getMoviesByGivenQuery($event)"></app-search-panel>
     </div>
-    <h2>{{movieResults?.total_results}} Search result(s)</h2>
+    <h2>{{movieResults ? movieResults.total_results : 0}} Search result(s)</h2>
     <app-result-list
       [movieList]="movieResults ? movieResults.results : []"
       (movieIdEmitter)="getMovieDetailsAndOpenModal($event)"

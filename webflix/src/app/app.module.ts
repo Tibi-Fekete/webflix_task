@@ -10,16 +10,19 @@ import { ResultListComponent } from './components/pages/search-page/result-list/
 import {CardModule} from 'primeng/card';
 import {PaginatorModule} from 'primeng/paginator';
 import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { SearchPanelComponent } from './components/pages/search-page/search-panel/search-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchPageComponent,
     DetailsModalComponent,
-    ResultListComponent
+    ResultListComponent,
+    SearchPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     CardModule,
     PaginatorModule,
     DialogModule,
-    TableModule
+    TableModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

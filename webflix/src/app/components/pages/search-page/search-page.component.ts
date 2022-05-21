@@ -11,7 +11,7 @@ import {MovieDetails} from "../../../models/movie-details.model";
 })
 export class SearchPageComponent implements OnInit {
 
-  public query: string = "star wars";
+  public query: string = "";
   public page: number = 1;
 
   public movieResults?: MovieListResult;
@@ -32,9 +32,15 @@ export class SearchPageComponent implements OnInit {
       error: () => {
       },
       complete: () => {
-        this.getMovieListAndMapGenres(this.query, 1);
+        // this.getMovieListAndMapGenres(this.query, 1);
       },
     })
+  }
+
+
+  public getMoviesByGivenQuery(event: any): void {
+    this.query = event;
+    this.getMovieListAndMapGenres(this.query, this.page);
   }
 
 

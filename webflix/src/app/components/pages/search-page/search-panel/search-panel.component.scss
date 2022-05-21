@@ -1,0 +1,51 @@
+@import "src/styles/main";
+
+div {
+  @include setBaseTitleStyle();
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+
+  h1 {
+    display: inline-block;
+    text-align: left;
+    width: 70%;
+    margin-bottom: 0.5rem;
+    @include setFontWeightAndSize(2rem, bold)
+  }
+
+  span {
+    width: 100%;
+
+    i {
+      font-size: 1.3rem;
+      cursor: pointer;
+
+      &:hover {
+        background: $gray;
+        border-radius: 1rem;
+      }
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+
+  @media only screen and(min-width: 576px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      width: 30%;
+      text-align: center;
+    }
+
+    span {
+      width: 65%;
+    }
+  }
+}
