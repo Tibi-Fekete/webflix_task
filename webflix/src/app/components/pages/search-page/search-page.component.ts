@@ -54,7 +54,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   public paginate(event: any): void {
-    this.page = event.page + 1;
+    this.page = event;
     this.getMovieListAndMapGenres(this.query, this.page)
   }
 
@@ -71,5 +71,7 @@ export class SearchPageComponent implements OnInit {
   public closeMovieDetailsModal(): void {
     this.detailsModalVisible = false;
   }
+
+
 
 }

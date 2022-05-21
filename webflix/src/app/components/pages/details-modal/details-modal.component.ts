@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MovieDetails} from "../../../models/movie-details.model";
+import {UtilMethodsService} from "../../../utils/util-methods.service";
 
 @Component({
   selector: 'app-details-modal',
@@ -12,7 +13,7 @@ export class DetailsModalComponent implements OnInit {
   @Input() public movie?: MovieDetails;
   @Output() public closeModalEmitter: EventEmitter<void> = new EventEmitter<void>()
 
-  constructor() { }
+  constructor(private utilMethods: UtilMethodsService) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +22,10 @@ export class DetailsModalComponent implements OnInit {
     this.display = false;
     this.closeModalEmitter.emit();
   }
+
+  public textListingEditor(list: any[], currentElement: any, index: number): string {
+    return this.utilMethods.textListingCommaEditor(list, currentElement, index);
+  }
+
 
 }

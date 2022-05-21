@@ -14,11 +14,13 @@ import {MenubarModule} from 'primeng/menubar';
 import {InputTextModule} from 'primeng/inputtext';
 import {ImageModule} from 'primeng/image';
 import {TableModule} from 'primeng/table';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { SearchPanelComponent } from './components/pages/search-page/search-panel/search-panel.component';
 import { NoResultsComponent } from './components/pages/search-page/no-results/no-results.component';
 import { HeaderComponent } from './components/common/header/header.component';
+import { PaginatorComponent } from './components/common/paginator/paginator.component';
+import {HttpErrorHandlerInterceptor} from "./utils/http-error-handler.interceptor";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { HeaderComponent } from './components/common/header/header.component';
     ResultListComponent,
     SearchPanelComponent,
     NoResultsComponent,
-    HeaderComponent
+    HeaderComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,9 @@ import { HeaderComponent } from './components/common/header/header.component';
     MenubarModule,
     ImageModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpErrorHandlerInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

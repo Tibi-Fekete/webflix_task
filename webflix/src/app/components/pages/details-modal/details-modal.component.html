@@ -22,22 +22,31 @@
       <p>Released: {{movie?.release_date | date}}</p>
       <p>{{movie?.overview}}</p>
       <table>
-          <tr>
-            <td>Country</td>
-            <td>???</td>
-          </tr>
-          <tr>
-            <td>Language</td>
-            <td>{{movie?.original_language}}</td>
-          </tr>
-          <tr>
-            <td>Genres</td>
-            <td><span *ngFor="let genre of movie?.genres">{{genre.name}}, </span></td>
-          </tr>
-          <tr>
-            <td>Length</td>
-            <td>{{movie?.runtime}} mins</td>
-          </tr>
+        <tr *ngIf="movie?.production_countries">
+          <td>Country</td>
+          <td>
+              <span
+                *ngFor="let country of movie?.production_countries; let i = index">
+              {{textListingEditor(movie!.production_countries, country.name, i)}}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>Language</td>
+          <td>{{movie?.original_language}}</td>
+        </tr>
+        <tr>
+          <td>Genres</td>
+          <td>
+            <span *ngFor="let genre of movie?.genres; let i = index">
+            {{textListingEditor(movie!.genres, genre.name, i)}}
+          </span>
+          </td>
+        </tr>
+        <tr>
+          <td>Length</td>
+          <td>{{movie?.runtime}} mins</td>
+        </tr>
       </table>
     </div>
   </div>
