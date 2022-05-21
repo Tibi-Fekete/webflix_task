@@ -61,7 +61,6 @@ export class SearchPageComponent implements OnInit {
   public getMovieDetailsAndOpenModal(movieId: number) {
     this.movieService.getMovieDetails(movieId).subscribe(
       (movie) => {
-        console.log(movie)
         this.detailedMovie = movie;
         this.detailsModalVisible = true;
       }
