@@ -18,6 +18,10 @@ export class DetailsModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public jumpToIMDB(): void {
+    window.open(`https://www.imdb.com/title/${this.movie?.imdb_id}/`, '_blank')
+  }
+
   public closeModal(): void {
     this.display = false;
     this.closeModalEmitter.emit();
@@ -26,6 +30,5 @@ export class DetailsModalComponent implements OnInit {
   public textListingEditor(list: any[], currentElement: any, index: number): string {
     return this.utilMethods.textListingCommaEditor(list, currentElement, index);
   }
-
 
 }

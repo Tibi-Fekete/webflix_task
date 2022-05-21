@@ -11,6 +11,7 @@ import {CardModule} from 'primeng/card';
 import {PaginatorModule} from 'primeng/paginator';
 import {DialogModule} from 'primeng/dialog';
 import {MenubarModule} from 'primeng/menubar';
+import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {ImageModule} from 'primeng/image';
 import {TableModule} from 'primeng/table';
@@ -44,7 +45,8 @@ import {HttpErrorHandlerInterceptor} from "./utils/http-error-handler.intercepto
     TableModule,
     InputTextModule,
     MenubarModule,
-    ImageModule
+    ImageModule,
+    ButtonModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpErrorHandlerInterceptor, multi: true},

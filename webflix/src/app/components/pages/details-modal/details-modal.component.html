@@ -50,5 +50,13 @@
       </table>
     </div>
   </div>
-  <ng-template pTemplate="footer"></ng-template>
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      class="p-button-secondary"
+      [style]="{'margin-top': '1rem'}"
+      label="Jump to IMDB"
+      (click)="jumpToIMDB()"
+    ></button>
+  </ng-template>
 </p-dialog>
