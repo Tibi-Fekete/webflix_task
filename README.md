@@ -1,4 +1,4 @@
-# Attrecto frontend próbafeladat - Webflix App
+# Webflix frontend próbafeladat - Webflix App
 
 ## Alkalmazás indítása localhoston:
 ### Terminálbam be kell lépni az angular app könyvtárába 
